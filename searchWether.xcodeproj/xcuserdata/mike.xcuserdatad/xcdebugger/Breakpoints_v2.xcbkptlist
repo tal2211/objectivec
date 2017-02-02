@@ -74,11 +74,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "searchWether/WeatherViewController.m"
-            timestampString = "507549030.941833"
+            timestampString = "507728450.123488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-getRespons:toCell:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[WeatherViewController getRespons:toCell:]_block_invoke_2"
+                  moduleName = "searchWether"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mike/Documents/xcode/searchWether/searchWether/WeatherViewController.m"
+                  timestampString = "507728573.766429"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "338">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_"
+                  moduleName = "searchWether"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mike/Documents/xcode/searchWether/searchWether/WeatherViewController.m"
+                  timestampString = "507728573.76904"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "searchWether"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mike/Documents/xcode/searchWether/searchWether/WeatherViewController.m"
+                  timestampString = "507728573.770189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "searchWether/WeatherViewController.m"
+            timestampString = "507728575.813857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-getRespons:toCell:"
             landmarkType = "7">
          </BreakpointContent>

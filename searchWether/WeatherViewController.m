@@ -24,7 +24,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     sities = [NSArray arrayWithObjects:@"Simferopol", @"Vinnitsa",@"Lutsk", @"Dnipro",@"Donets'k", @"Zhytomyr",@"Uzhgorod", @"Zaporizhzhia",@"Ivano-Frankivsk", @"Kiev",@"Kropivnitskiy", @"Lugansk",@"Lviv", @"Mykolayiv",@"Odessa", @"Poltava",@"Rivne",@"Sumy", @"Ternopil",@"Kharkov", @"Herson",@"Khmelnytskyi", @"Cherkassy",@"Chernovtsy",@"Chernihiv",   nil];
     sities_ua = [NSArray arrayWithObjects:@"Сімферополь", @"Вінниця",@"Луцьк", @"Дніпро",@"Донецьк", @"Житомир",@"Ужгород", @"Запоряжжя",@"Івано-Францівськ", @"Київ",@"Кропивницький", @"Луганськ",@"Львів", @"Миколаїв",@"Одеса", @"Полтава",@"Рівне",@"Суми", @"Тернопіль",@"Харків", @"Херсон",@"Хмельницьк", @"Черкаси",@"Чернівці",@"Чернігів",   nil];
-    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [sities count];
@@ -44,12 +43,9 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)getRespons:(NSString *)sity toCell:(UITableViewCell *)cell{
-    
-    
     NSString *string1 = [NSString stringWithFormat:@"%@%@", @"http://api.apixu.com/v1/current.json?key=9e1bc123d8834ed781015902173001&q=", sity];
     NSURL *url = [NSURL URLWithString:string1];
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -63,18 +59,19 @@
             if ( ( ![current isEqual:[NSNull null]] )) {
                 NSString *cloud = [current objectForKey: @"cloud"];
                 int val = [cloud intValue];
-                
-                switch (val) {
-                    case 0:
-                        break;
-                    case 1:
-                        cell.imageView.image = [UIImage imageNamed:@"cloud_w.png"];
-                        break;
-    
-                    default:
-                        cell.imageView.image = [UIImage imageNamed:@"cloud_b.png"];
-                        break;
-                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    switch (val) {
+                        case 0:
+                            break;
+                        case 1:
+                            cell.imageView.image = [UIImage imageNamed:@"cloud_w.png"];
+                            break;
+                            
+                        default:
+                            cell.imageView.image = [UIImage imageNamed:@"cloud_b.png"];
+                            break;
+                    }
+                });
             }
         }
     }] resume];
@@ -85,7 +82,6 @@
         SityViewController * sityView = segue.destinationViewController;
         sityView.sityName = [sities objectAtIndex:indexPath.row];
         sityView.sityNameUa = [sities_ua objectAtIndex:indexPath.row];
-        
     }
 }
 @end

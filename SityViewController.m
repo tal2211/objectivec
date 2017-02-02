@@ -58,36 +58,29 @@
                 if ( ( ![current isEqual:[NSNull null]] )) {
                     NSString *cloud = [current objectForKey: @"cloud"];
                     int val = [cloud intValue];
-                    switch (val) {
-                        case 0:
-                            imageWeather.image = [UIImage imageNamed:@"sun.png"];
-                            break;
-                        case 1:
-                            imageWeather.image = [UIImage imageNamed:@"cloud_w.png"];
-                            break;
-                            
-                        default:
-                            imageWeather.image = [UIImage imageNamed:@"cloud_b.png"];
-                            break;
-                    }
-                    
                     NSString *temp = [current objectForKey: @"temp_c"];
                     NSString *tempC = [NSString stringWithFormat:@"Температура: %@ C", temp];
-                    self.tempWeather.text = tempC;
-                    
-                   // NSLog(@"temp: %@",temp);
-                    
                     
                     NSString *wind_kph = [current objectForKey: @"wind_kph"];
                     NSString *windKmH = [NSString stringWithFormat:@"Швидкість вітру: %@ км/год", wind_kph];
-                    self.windWeather.text = windKmH;
                     
-                   // NSLog(@"wind: %@",windKmH);
-                    
-                    //
-                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        switch (val) {
+                            case 0:
+                                imageWeather.image = [UIImage imageNamed:@"sun.png"];
+                                break;
+                            case 1:
+                                imageWeather.image = [UIImage imageNamed:@"cloud_w.png"];
+                                break;
+                                
+                            default:
+                                imageWeather.image = [UIImage imageNamed:@"cloud_b.png"];
+                                break;
+                        }
+                        self.tempWeather.text = tempC;
+                        self.windWeather.text = windKmH;
+                    });
                 }
-                
             }
         } @catch (NSException *exception) {
             NSLog(@"Error: %@",exception.name);
